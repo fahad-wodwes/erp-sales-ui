@@ -1,0 +1,128 @@
+/* SearchSelect.css - Additional styles for the SearchSelect component */
+/* Note: This builds on top of your existing SearchField.css */
+
+.search-select-container {
+    position: relative;
+    width: 100%;
+}
+
+.search-select-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    height: 24px;
+}
+
+.search-select-header:hover {
+    border-color: #aaa;
+}
+
+.search-select-value {
+    flex-grow: 1;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-select-arrow {
+    margin-left: 8px;
+    color: #666;
+    font-size: 10px;
+}
+
+.search-select-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 300px;
+    background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 1px;
+}
+
+.search-select-search {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.search-select-search input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.search-field-suggestions {
+    max-height: 240px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.suggestion-item {
+    padding: 5px 12px;
+    cursor: pointer;
+    display: flex;
+    font-size: 13px;
+    flex-direction: column;
+}
+
+.suggestion-item:hover {
+    background-color: #f5f5f5;
+}
+
+.suggestion-item.highlighted {
+    background-color: #e9f5ff;
+}
+
+.suggestion-item.selected {
+    background-color: #f0f7ff;
+    font-weight: 500;
+}
+
+.primary-text {
+    font-weight: normal;
+}
+
+.secondary-text {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 2px;
+}
+
+.no-results {
+    padding: 12px;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Styles for product selection row in the table */
+td .search-select-container {
+    min-width: 150px;
+}
+
+.product-search-row {
+    display: flex;
+    align-items: center;
+}
+
+.product-code-cell .search-select-header {
+    border-radius: 4px 0 0 4px;
+}
+
+.product-name-cell .search-select-header {
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+}

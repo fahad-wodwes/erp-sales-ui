@@ -1,0 +1,265 @@
+/* App.css */
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+/* Main container */
+.sales-app {
+  width: 1200px;
+  margin: 20px auto;
+  border: 1px solid #999;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Window header styling */
+.window-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-bottom: 1px solid #999;
+}
+
+.title {
+  font-size: 12px;
+  color: #333;
+}
+
+.window-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.window-controls button {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #999;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.close {
+  font-weight: bold;
+}
+
+/* Sales container */
+.sales-container {
+  padding: 5px;
+}
+
+/* Section headers */
+.section-header {
+  background-color: #e0e0e0;
+  padding: 5px;
+  border: 1px solid #999;
+  margin-bottom: 5px;
+}
+
+.section-title {
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+.detail-header {
+  margin-top: 10px;
+}
+
+/* Sales header form */
+.sales-header {
+  border: 1px solid #999;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Labels */
+label {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.blue-label {
+  color: blue;
+}
+
+.red-label {
+  color: red;
+}
+
+/* Inputs and selects */
+input,
+select {
+  padding: 5px;
+  border: 1px solid #aaa;
+  font-size: 12px;
+  height: 24px;
+}
+
+input.readonly {
+  background-color: #e8e8e8;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin-right: 5px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.notes-input {
+  width: 100%;
+}
+
+.notes-row .form-group {
+  flex: 1;
+}
+
+/* Tax options */
+.tax-options {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.tax-label {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.tax-radios {
+  display: flex;
+  gap: 15px;
+}
+
+.tax-radios label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Sales detail table */
+.sales-detail {
+  border: 1px solid #999;
+  padding: 5px;
+  height: 300px;
+  /* Fixed height for the detail section */
+  overflow-y: auto;
+  background-color: #f1f1f1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #e0e0e0;
+}
+
+th,
+td {
+  border: 1px solid #aaa;
+  padding: 3px;
+  font-size: 12px;
+  text-align: left;
+}
+
+tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Column widths */
+.item-num {
+  width: 40px;
+}
+
+.product-code {
+  width: 100px;
+}
+
+.unit-price,
+.quantity,
+.subtotal {
+  width: 80px;
+}
+
+.warehouse {
+  width: 80px;
+}
+
+.product-name {
+  width: 250px;
+}
+
+.unit {
+  width: 60px;
+}
+
+.item-notes {
+  width: 200px;
+}
+
+/* Table inputs */
+td input,
+td select {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 12px;
+  height: 22px;
+}
+
+td input:focus,
+td select:focus {
+  outline: none;
+  background-color: #f0f8ff;
+}
+
+td input.readonly {
+  background-color: #f1f1f1;
+}
+
+td.action-column {
+  width: 20px;
+}
