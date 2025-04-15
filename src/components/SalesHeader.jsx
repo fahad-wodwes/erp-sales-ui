@@ -44,7 +44,7 @@ const SalesHeader = ({ salesData, handleDataChange, customerSuggestions, handleC
                 <InputField label="稅額" value={salesData.taxAmount.toString()} onChange={() => {}} readOnly />
               </div>
               <div className="form-group">
-                <SearchSelect label="銷售人員" labelClass="blue-label" value={salesData.salesperson} onChange={(value) => handleDataChange("salesperson", value)} options={mockData.salespeople} displayField="name" valueField="id" required />
+                <SearchSelect label="銷售人員" labelClass="blue-label" value={salesData.salesperson} onChange={(value) => handleDataChange("salesperson", value)} options={mockData.salespersons} displayField="name" valueField="id" required />
               </div>
             </div>
 
