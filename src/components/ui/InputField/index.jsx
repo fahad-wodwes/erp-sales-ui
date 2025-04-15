@@ -1,23 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./SearchField.css";
+import "./InputField.css";
 
-/**
- * A reusable search field component with suggestion dropdown
- *
- * @param {Object} props
- * @param {string} props.label - Field label
- * @param {string} props.value - Current input value
- * @param {Function} props.onChange - Function to call when value changes (val) => {}
- * @param {Array} props.suggestions - Array of suggestion objects
- * @param {Function} props.onSuggestionSelect - Function to call when suggestion is selected (item) => {}
- * @param {string} props.displayField - Field name to display in suggestions (default: 'name')
- * @param {string} props.valueField - Field name to use for value (default: same as displayField)
- * @param {string} props.secondaryField - Optional second field to display in suggestions
- * @param {boolean} props.readOnly - Whether the field is read-only
- * @param {string} props.labelClass - Custom class for the label
- * @param {boolean} props.required - Whether the field is required
- */
-function InputField({ label, value, onChange, suggestions = [], onSuggestionSelect, displayField = "name", valueField, secondaryField, readOnly = false, labelClass = "", required = false }) {
+function InputField({ label, value, onChange, suggestions = [], onSuggestionSelect, displayField = "name", secondaryField, readOnly = false, labelClass = "", required = false }) {
   const [isFocused, setIsFocused] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const dropdownRef = useRef(null);

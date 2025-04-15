@@ -1,23 +1,23 @@
-/* SearchField.css */
 .search-field-container {
     position: relative;
     display: flex;
-    flex-direction: column;
+    gap: 8px;
+    /* flex-direction: column; */
     flex: 1;
 }
 
 .search-field-label {
-    margin-bottom: 5px;
-    font-size: 14px;
+    white-space: nowrap;
     font-weight: 500;
     color: #333;
+    min-width: 63px;
 }
 
-.search-field-label.required::after {
+/* .search-field-label.required::after {
     content: '*';
     color: #e53935;
     margin-left: 2px;
-}
+} */
 
 .search-field-label.blue-label {
     color: #1976d2;
@@ -36,7 +36,7 @@
     width: 100%;
     padding: 8px 12px;
     border: 1px solid #cacece;
-    /* border-radius: 4px; */
+    border-radius: 2px;
     font-size: 14px;
     background-color: #e9fbff;
     transition: border-color 0.2s;

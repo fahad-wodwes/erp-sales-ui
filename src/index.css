@@ -14,47 +14,12 @@ body {
 
 /* Main container */
 .sales-app {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   margin: 20px auto;
   border: 1px solid #999;
-  background-color: #f5f5f5;
+  background-color: #fcfcfc;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Window header styling */
-.window-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #e0e0e0;
-  padding: 5px 10px;
-  border-bottom: 1px solid #999;
-}
-
-.title {
-  font-size: 12px;
-  color: #333;
-}
-
-.window-controls {
-  display: flex;
-  gap: 5px;
-}
-
-.window-controls button {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #999;
-  background-color: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.close {
-  font-weight: bold;
 }
 
 /* Sales container */
@@ -64,40 +29,54 @@ body {
 
 /* Section headers */
 .section-header {
-  background-color: #e0e0e0;
+  background-color: #f2f2f2;
   padding: 5px;
-  border: 1px solid #999;
-  margin-bottom: 5px;
+  border: 1px solid #f1f1f1;
+  border-bottom-width: 0px;
+  display: inline-flex;
+  box-shadow: 3px 0 1px -2px rgba(0, 0, 0, 0.5);
+  /* margin-bottom: 5px; */
 }
 
 .section-title {
   color: #333;
-  font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   padding-left: 5px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
 
 .detail-header {
-  margin-top: 10px;
+  margin-top: 2px;
 }
 
 /* Sales header form */
-.sales-header {
-  border: 1px solid #999;
+.section-container {
+  border: 4px solid #f1f1f1;
   padding: 10px;
   background-color: #f1f1f1;
+  box-shadow:
+    inset 0 0px 2px rgba(0, 0, 0, 0.5),
+    2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.sales-grid {
+  display: grid;
+  grid-template-columns: auto 60px;
+  gap: 8px;
 }
 
 .form-row {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .form-group {
   flex: 1;
-  margin-right: 10px;
+  margin-right: 8px;
   display: flex;
-  flex-direction: column;
+  gap: 8px;
 }
 
 .form-group:last-child {
@@ -110,7 +89,7 @@ body {
 
 /* Labels */
 label {
-  font-size: 12px;
+  font-size: 15px;
   margin-bottom: 3px;
 }
 
@@ -141,10 +120,15 @@ input[type="checkbox"] {
   margin-right: 5px;
 }
 
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .checkbox-container {
   display: flex;
   align-items: center;
-  margin-top: 5px;
 }
 
 .notes-input {
@@ -156,19 +140,14 @@ input[type="checkbox"] {
 }
 
 /* Tax options */
-.tax-options {
-  display: flex;
-  margin-bottom: 10px;
-  align-items: center;
-}
 
 .tax-label {
-  font-size: 12px;
+  font-size: 15px;
   margin-right: 10px;
 }
 
 .tax-radios {
-  display: flex;
+  /* display: flex; */
   gap: 15px;
 }
 
@@ -180,12 +159,9 @@ input[type="checkbox"] {
 
 /* Sales detail table */
 .sales-detail {
-  border: 1px solid #999;
-  padding: 5px;
   height: 300px;
   /* Fixed height for the detail section */
   overflow-y: auto;
-  background-color: #f1f1f1;
 }
 
 table {
@@ -194,15 +170,20 @@ table {
 }
 
 thead {
-  background-color: #e0e0e0;
+  background-color: #a9d2d4;
 }
 
 th,
 td {
   border: 1px solid #aaa;
   padding: 3px;
-  font-size: 12px;
+  font-size: 14px;
   text-align: left;
+  font-weight: 400;
+}
+
+th {
+  border: 1.5px solid rgb(44, 42, 42);
 }
 
 tbody tr:hover {
@@ -211,7 +192,7 @@ tbody tr:hover {
 
 /* Column widths */
 .item-num {
-  width: 40px;
+  width: 60px;
 }
 
 .product-code {
@@ -260,6 +241,98 @@ td input.readonly {
   background-color: #f1f1f1;
 }
 
+th.expand {
+  width: 10px;
+  background-color: #a9d2d4;
+}
+
 td.action-column {
-  width: 20px;
+  width: 10px;
+}
+
+td.action-column .delete-btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.table-controls {
+  margin-top: 8px;
+}
+
+.table-controls .add-row-btn {
+  cursor: pointer;
+}
+
+.app-toolbar {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+}
+
+.toolbar-btn {
+  min-width: 20px;
+  width: 100%;
+  height: 30px;
+  background-color: #f1f1f1;
+  border: 1px solid #333;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbar-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.toolbar-btn.highlight {
+  background-color: #ffe4b5;
+  border: 1px solid #ffa500;
+  font-weight: bold;
+}
+
+/* Media queries */
+
+@media (max-width: 991.5px) {
+  .sales-grid {
+    grid-template-columns: auto;
+  }
+
+  .sales-grid .tax-options {
+    grid-row-start: 1;
+    display: flex;
+  }
+
+  .sales-grid .tax-options .tax-radios {
+    display: flex;
+  }
+}
+
+@media (max-width: 767.5px) {
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group {
+    margin-right: 0;
+  }
+
+  .sales-detail {
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .app-toolbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .toolbar-btn {
+    width: 100%;
+  }
 }

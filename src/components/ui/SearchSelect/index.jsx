@@ -1,23 +1,7 @@
-// SearchSelect.js
 import React, { useState, useRef, useEffect } from "react";
-import "./SearchSelect.css"; // Reuse the existing CSS
+import "./SearchSelect.css";
 
-/**
- * A searchable select component for handling large lists of options
- * Shows only 4 options initially, then filters on search
- *
- * @param {Object} props
- * @param {string} props.label - Field label
- * @param {string} props.value - Current selected value
- * @param {Function} props.onChange - Function to call when value changes (val) => {}
- * @param {Array} props.options - Array of option objects
- * @param {string} props.displayField - Field name to display in options (default: 'name')
- * @param {string} props.valueField - Field name to use for value (default: 'id')
- * @param {string} props.labelClass - Custom class for the label
- * @param {boolean} props.required - Whether the field is required
- * @param {string} props.placeholder - Placeholder text
- */
-function SearchSelect({ label, value, onChange, options = [], displayField = "name", valueField = "id", labelClass = "", required = false, placeholder = "Search...", secondaryField }) {
+function SearchSelect({ label, value, onChange, options = [], displayField = "name", valueField = "id", labelClass = "", required = false, placeholder = "", secondaryField }) {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
@@ -144,14 +128,13 @@ function SearchSelect({ label, value, onChange, options = [], displayField = "na
         {/* Select display (shows when collapsed) */}
         <div className="search-select-header" onClick={toggleDropdown}>
           <span className="search-select-value">{displayValue || placeholder}</span>
-          {/* <span className="search-select-arrow">{isOpen ? "▲" : "▼"}</span> */}
         </div>
 
         {/* Dropdown content */}
         {isOpen && (
           <div className="search-select-dropdown">
             <div className="search-select-search">
-              <input ref={inputRef} type="text" className="search-field-input" placeholder="Type to search..." value={searchQuery} onChange={handleSearchChange} onKeyDown={handleKeyDown} autoFocus />
+              <input ref={inputRef} type="text" className="search-field-input" placeholder="輸入以搜尋..." value={searchQuery} onChange={handleSearchChange} onKeyDown={handleKeyDown} autoFocus />
             </div>
 
             <ul ref={dropdownRef} className="search-field-suggestions">
@@ -163,7 +146,7 @@ function SearchSelect({ label, value, onChange, options = [], displayField = "na
                   </li>
                 ))
               ) : (
-                <li className="no-results">No results found</li>
+                <li className="no-results">找不到結果</li>
               )}
             </ul>
           </div>
